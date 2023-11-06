@@ -37,4 +37,8 @@ public class Produkt {
     public void setPreis(double preis) {
         this.preis = preis;
     }
+
+    public void setMenge(int menge) {
+        this.menge = menge;
+    }
 }
