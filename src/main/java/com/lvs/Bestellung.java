@@ -17,6 +17,7 @@ public class Bestellung {
         this.produkte = new ArrayList<Produkt>();
     }
 
+    // Getter & Setter
     public int gesamtMenge() {
         int gesamtMenge = 0;
         for (Produkt produkt : produkte) {
@@ -25,7 +26,6 @@ public class Bestellung {
         return gesamtMenge;
     }
 
-    // Getter & Setter
     public int getBestellungsId() {
         return bestellungsId;
     }
@@ -44,7 +44,7 @@ public class Bestellung {
 
     public void printProdukte() {
         for (Produkt p : produkte) {
-            System.out.println(p.getProduktId() + " " + p.getName() + " " + p.getPreis() + " " + p.getMenge());
+            System.out.println("Produkt ID: " + p.getProduktId() + ", Name: " + p.getName() + ", Preis: " + p.getPreis() + ", Menge: " + p.getMenge());
         }
     }
 }
