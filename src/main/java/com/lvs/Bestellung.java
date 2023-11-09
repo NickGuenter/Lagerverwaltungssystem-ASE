@@ -1,4 +1,5 @@
 package com.lvs;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Bestellung {
@@ -11,6 +12,12 @@ public class Bestellung {
         this.produkte = produkte;
     }
 
+        public Bestellung() {
+        this.bestellungsId = (int) (Math.random() * 1000);
+        this.produkte = new ArrayList<Produkt>();
+    }
+
+    // Getter & Setter
     public int gesamtMenge() {
         int gesamtMenge = 0;
         for (Produkt produkt : produkte) {
@@ -19,7 +26,6 @@ public class Bestellung {
         return gesamtMenge;
     }
 
-    // Getter & Setter
     public int getBestellungsId() {
         return bestellungsId;
     }
@@ -30,5 +36,15 @@ public class Bestellung {
 
     public void setProdukte(List<Produkt> produkte) {
         this.produkte = produkte;
+    }
+
+    public void addProdukt(Produkt produkt) {
+        produkte.add(produkt);
+    }
+
+    public void printProdukte() {
+        for (Produkt p : produkte) {
+            System.out.println("Produkt ID: " + p.getProduktId() + ", Name: " + p.getName() + ", Preis: " + p.getPreis() + ", Menge: " + p.getMenge());
+        }
     }
 }
